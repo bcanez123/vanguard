@@ -1,8 +1,8 @@
 /* CSS BY BERNADETTE CANEZ */
 
 /* IMPORTED FONTS*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-/* IMPORT "INTER" FROM GOOGLE FONTS"/
+/* IMPORT "INTER" FROM GOOGLE FONTS*/
+
 
 
 /* CSS RESET */
@@ -77,6 +77,10 @@ h1 {
 }
 
 h2 {
+    font-family: "Inter", sans-serif;
+}
+
+h3 {
     font-family: "Inter", sans-serif;
 }
 
