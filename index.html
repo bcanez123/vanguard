@@ -14,10 +14,9 @@
 
 <body>
 <!-- WRAP CONTENT IN VALIDATED, SEMANTIC HTML5 (SEE HINTS FOLDER LINKED TO IN THE CANVAS INSTRUCTIONS)-->
-    <header>
+<header>
         <h1>Vanguard</h1>
-        <img src="images/vanguard-logo.svg" alt="vanguard-logo">
-    </header>
+        <img class="logo" src="images/vanguard-logo.svg" alt="vanguard-logo">
     <nav>
         <h2>Main Navigation</h2>
         <ul>
@@ -26,10 +25,11 @@
             <li><a href="contact">Contact</a></li>
         </ul>
     </nav>
+</header>
     
     <main>
         <section>
-        <h2>Innovation & Investment</h2>
+        <h2 id="hero">Innovation & Investment</h2>
             <p>We empower businesses to lead the future with high-impact strategies, market intelligence, and financial solutions that drive success.</p>
             <a href="requestAConsultation">Request a Consultation</a>
         </section>
@@ -128,43 +128,47 @@
                     </div>
             </section>
         </section>
+
+        <section>
+        <h2>Contact Us</h2>
+                <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
+            <form action="https://example.com/" method="POST"></form>
+                <div>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="fullName" id="fullName">
+                </div>
+
+                <div>
+                    <label for="emailAddress">Email Address</label>
+                    <input type="text" name="emailAddress" id="emailAddress">
+                </div>
+
+                <div>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" name="companyName" id="companyName">
+                </div>
+
+                <div>
+                    <label for="industry">Industry</label>
+                    <input type="text" name="industry" id="industry">
+                </div>
+
+                <div>
+                    <label for="howCanWeHelpYou">How can we help you?</label>
+                    <textarea name="howCanWeHelpYou" id="howCanWeHelpYou" rows="2" cols="20"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <h2>Contact Us</h2>
-                <p>Want to take your business to the next level? Get in touch with our elite team today.</p>
-                <p>
-                    <label for="fullName">Full Name</label>
-                    <input type="text" name="fullName" id="fullName">
-                </p>
-
-                <p>
-                    <label for="emailAddress">Email Address</label>
-                    <input type="text" name="emailAddress" id="emailAddress">
-                </p>
-
-                <p>
-                    <label for="companyName">Company Name</label>
-                    <input type="text" name="companyName" id="companyName">
-                </p>
-
-                <p>
-                    <label for="industry">Industry</label>
-                    <input type="text" name="industry" id="industry">
-                </p>
-
-                <p>
-                    <label for="howCanWeHelpYou">How can we help you?</label>
-                    <textarea name="howCanWeHelpYou" id="howCanWeHelpYou" rows="2" cols="20"></textarea>
-                </p>
-
-                <p>
-                    <input type="submit" value="Submit">
-                </p>
-
-        <small> &#169; 2025 Vanguard. All rights reserved.</small>
+        <address> &#169; 2025 Vanguard. All rights reserved.
         <a href="mailto:info@vanguard.com">info@vanguard.com</a>
-        <small>Phone: 480.123.4567</small>
+        Phone: 480.123.4567</address>
     </footer>
 </body>
 </html>

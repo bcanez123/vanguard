@@ -66,6 +66,20 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
+header {
+    background-color: var(--blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+    font-family: "Inter", sans-serif;
+}
+
+h2 {
+    font-family: "Inter", sans-serif;
+}
+
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -76,7 +90,7 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -87,13 +101,15 @@ table {
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+ .logo {
     content: "";
 
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    float: left;
+    z-index: 1;
 
 }
 /* THIS ONE IS DONE FOR YOU */
