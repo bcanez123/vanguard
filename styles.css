@@ -73,6 +73,12 @@ header {
     color: white;
 }
 
+.vanguardContainer{
+    display: grid;
+    grid-template-columns: 70px 70px;
+    padding-top: 20px;
+}
+
 .container h1 {
     color: var(--blue);
     font-size: 25px;
