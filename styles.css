@@ -93,6 +93,7 @@ nav ul {
     overflow; hidden;
     text-align: right;
     max-height: 0;
+    align-content: right;
     
 }
 
@@ -208,8 +209,8 @@ p {
         top: 1.5rem;
         left: .5rem;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        float: left;
+        grid-template-columns: 100px 100px 100px;
+        align-content: right;
     }
     nav li a {
         display: inline-block;
