@@ -67,10 +67,98 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
 header {
-    background-color: var(--blue);
+    background-color: var(--black);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    color: white;
 }
+
+.container h1 {
+    color: var(--blue);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow; hidden;
+    text-align: right;
+    max-height: 0;
+    
+}
+
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+}
+
+nav li a {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+}
+
+nav a:hover, nav input:hover {
+    background-color: var(--charcoal);
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+
+label span:before, label span:after{
+    background: var(--white);
+    content: '';
+    display:block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after{
+    top: 0;
+}
+
 
 h1 {
     font-family: "Inter", sans-serif;
@@ -78,13 +166,52 @@ h1 {
 
 h2 {
     font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 h3 {
     font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
+p {
+    font-family: "Inter", sans-serif;
+    line-height: normal;
+}
+
+.whatWeOffer {
+    background-color: var(--blue);
+    border-radius: 10px;
+    padding: 25px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.whatWeOffer h3{
+    line-height: normal;
+}
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+
+@media screen and (min-width: 600px){
+    nav ul {
+        overflow: visible;
+        position: absolute;
+        top: 1.5rem;
+        left: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        float: left;
+    }
+    nav li a {
+        display: inline-block;
+    }
+    label span, input {
+        display:none;
+    }
+}
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -94,7 +221,7 @@ h3 {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- #hero {
+ .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -102,6 +229,27 @@ h3 {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: white;
+}
+
+.hero h2 {
+    font-weight: bold;
+    font-size: 30px;
+    line-height:3em;
+}
+
+.hero a {
+    background-color: #007BFF;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+.hero p {
+    padding-bottom: 2.5em;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
@@ -115,6 +263,92 @@ h3 {
     float: left;
     z-index: 1;
 
+}
+
+#results  {
+    background-color: var(--blue);
+    padding-top: 45px;
+    color: white;
+}
+
+.growth {
+    background-color: var(--blue);
+    padding-top: 45px;
+    padding-bottom: 45px;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.contactUs {
+    background-color: var(--black);
+    color: white;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-family: "Inter", sans-serif;
+}
+
+.contactUs p {
+    padding-bottom: 30px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 5px;
+}
+
+.form input {
+    border: solid 3px var(--blue);
+    height: 35px;
+}
+
+.form textarea {
+    border: solid 3px var(--blue);
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.form label {
+    padding-bottom: 5px;
+}
+
+button {
+    background-color: var(--blue);
+    border: 0px;
+    color: white;
+    display: block;
+    width:100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+table {
+    background-color: var(--black);
+    color: white;
+    font-family: "Inter", sans-serif;
+    display: inline-block;
+    align-content: center;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--charcoal);
+  }
+
+th {
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+    border: 1px solid var(--charcoal);
+    background-color: var(--black);
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid var(--charcoal);
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -164,7 +398,7 @@ h3 {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 800px){
     #results {
         grid-template-columns: 1fr 1fr;
     }
@@ -178,6 +412,18 @@ h3 {
     .bar-chart {
         width: 50%;
     }
+    .offerings {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+    }
 
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 800px) {
+    .offerings {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
