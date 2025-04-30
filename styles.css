@@ -2,7 +2,7 @@
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS*/
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
 /* CSS RESET */
@@ -68,15 +68,12 @@ table {
 
 header {
     background-color: var(--black);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     color: white;
 }
 
-.vanguardContainer{
+header div {
     display: grid;
-    grid-template-columns: 70px 70px;
-    padding-top: 20px;
+    grid-template-columns: 1fr auto;
 }
 
 .container h1 {
@@ -91,10 +88,9 @@ nav ul {
     padding: 0;
     list-style: none;
     overflow; hidden;
-    text-align: right;
+    text-align: center;
     max-height: 0;
     align-content: right;
-    
 }
 
 nav h2 {
@@ -111,6 +107,7 @@ nav li a {
     font-weight: bold;
     text-decoration: none;
     color: var(--blue);
+    transition: background-color .3s ease-in;
 }
 
 nav a:hover, nav input:hover {
@@ -133,10 +130,10 @@ label span {
     width: 2rem;
 }
 
-label span:before, label span:after{
+label span:before, label span:after {
     background: var(--white);
     content: '';
-    display:block;
+    display: block;
     height: 100%;
     position: absolute;
     transition: all .2s ease-out;
@@ -162,7 +159,7 @@ input:checked ~ label span:before {
     transform: rotate(-45deg);
 }
 
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after{
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
 
@@ -186,6 +183,15 @@ h3 {
 p {
     font-family: "Inter", sans-serif;
     line-height: normal;
+}
+
+#ourExpertise {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+#whatWeOffer {
+    padding-bottom: 45px;
 }
 
 .whatWeOffer {
@@ -267,26 +273,30 @@ p {
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-    float: left;
+    display: flex;
     z-index: 1;
 
 }
 
-#results  {
+.results-container {
     background-color: var(--blue);
+    padding-bottom: 55px;
     padding-top: 45px;
-    color: white;
-}
-
-.growth {
-    background-color: var(--blue);
-    padding-top: 45px;
-    padding-bottom: 45px;
-    color: white;
+    color: var(--white);
     font-family: "Inter", sans-serif;
 }
 
-.contactUs {
+.profits {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.growth {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+#contactUs {
     background-color: var(--black);
     color: white;
     padding-top: 45px;
@@ -294,28 +304,28 @@ p {
     font-family: "Inter", sans-serif;
 }
 
-.contactUs p {
+#contactUs p {
     padding-bottom: 30px;
 }
 
-.form {
-    display: grid;
-    grid-template-columns: auto;
+form {
     padding: 5px;
+    color: var(--white);
 }
 
-.form input {
+#contactUS input {
     border: solid 3px var(--blue);
     height: 35px;
+    fill: white;
 }
 
-.form textarea {
+form textarea {
     border: solid 3px var(--blue);
     height: 80px;
     margin-bottom: 15px;
 }
 
-.form label {
+#contactUs label {
     padding-bottom: 5px;
 }
 
@@ -330,8 +340,8 @@ button {
     font-weight: bold;
     font-size: 20px;
     border-radius: 10px;
-    
 }
+
 table {
     background-color: var(--black);
     color: white;
@@ -403,10 +413,24 @@ td {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+footer {
+    background-color: var(--black);
+    text-align: center;
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    padding-bottom: 20px;
+    line-height: normal;
+}
+
+footer a {
+    color: var(--blue);
+}
+
 
 /* MEDIA QUERIES (MEDIUM) */ 
 @media screen and (min-width: 800px){
     #results {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .results-container {
@@ -416,7 +440,7 @@ td {
     .results-table {
         width: 50%;
     }
-    .bar-chart {
+    #bar-chart {
         width: 50%;
     }
     .offerings {
@@ -428,9 +452,16 @@ td {
 }
 
 /* MEDIA QUERIES (LARGE) */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1024px) {
     .offerings {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .results-table {
+        width: 100%;
+    }
+    #bar-chart {
+        width: 100%;
     }
 }
