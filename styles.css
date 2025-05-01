@@ -71,7 +71,7 @@ header {
     color: white;
 }
 
-header div {
+header div{
     display: grid;
     grid-template-columns: 1fr auto;
 }
@@ -111,7 +111,8 @@ nav li a {
 }
 
 nav a:hover, nav input:hover {
-    background-color: var(--charcoal);
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 nav label {
@@ -121,7 +122,7 @@ nav label {
     user-select: none;
 }
 
-label span {
+nav label span {
     background-color: var(--white);
     display: block;
     height: .25rem;
@@ -130,7 +131,7 @@ label span {
     width: 2rem;
 }
 
-label span:before, label span:after {
+nav label span:before, label span:after {
     background: var(--white);
     content: '';
     display: block;
@@ -140,26 +141,26 @@ label span:before, label span:after {
     width: 100%;
 }
 
-label span:before {
+nav label span:before {
     top: .75rem;
 }
-label span:after {
+nav label span:after {
     top: -.75rem;
 }
 
-input {
+nav input {
     display: none;
 }
 
-input:checked ~ ul {
+nav input:checked ~ ul {
     max-height: 500px;
 }
 
-input:checked ~ label span:before {
+nav input:checked ~ label span:before {
     transform: rotate(-45deg);
 }
 
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
 
@@ -208,24 +209,6 @@ p {
 }
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
-@media screen and (min-width: 600px){
-    nav ul {
-        overflow: visible;
-        position: absolute;
-        top: 1.5rem;
-        left: .5rem;
-        display: grid;
-        grid-template-columns: 100px 100px 100px;
-        align-content: right;
-    }
-    nav li a {
-        display: inline-block;
-    }
-    label span, input {
-        display:none;
-    }
-}
-
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -261,20 +244,23 @@ p {
     border-radius: 10px;
 }
 
+.hero a:hover {
+    background-color: var(--red);
+    transform: scale(5,5);
+}
+
 .hero p {
     padding-bottom: 2.5em;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- .logo {
+ h1::before {
     content: "";
-
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-    display: flex;
-    z-index: 1;
+    float:left;
 
 }
 
@@ -313,16 +299,22 @@ form {
     color: var(--white);
 }
 
-#contactUS input {
+form input {
     border: solid 3px var(--blue);
     height: 35px;
     fill: white;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 form textarea {
     border: solid 3px var(--blue);
     height: 80px;
     margin-bottom: 15px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #contactUs label {
@@ -449,6 +441,23 @@ footer a {
         column-gap: 15px;
     }
 
+    nav ul {
+        overflow: visible;
+        position: absolute;
+        top: 1.5rem;
+        left: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-content: right;
+        width: auto;
+    }
+    nav li a {
+        display: inline-block;
+    }
+    nav label span, nav input {
+        display:none;
+    }
+
 }
 
 /* MEDIA QUERIES (LARGE) */
@@ -463,5 +472,11 @@ footer a {
     }
     #bar-chart {
         width: 100%;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
     }
 }
