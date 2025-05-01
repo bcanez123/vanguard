@@ -87,7 +87,7 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow; hidden;
+    overflow: hidden;
     text-align: center;
     max-height: 0;
     align-content: right;
